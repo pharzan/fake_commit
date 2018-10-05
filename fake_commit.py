@@ -53,7 +53,6 @@ def fake_commit(user,repo,days):
     os.chmod('commits.sh', 0o755)
 
 def main():
-    repo = 'fake_repo'
     username = input("Enter Username: ")
     repo = input('Enter repository name to fake commits: ')
     days = int(input('Enter number of days to go back in time: '))
