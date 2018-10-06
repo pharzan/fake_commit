@@ -1,5 +1,5 @@
 # Fake Commit
-A git fake commit generator to make those github squares green.
+A git fake commit generator to make those Github squares green.
 
 This simple script generates a linux shell script which in turn creates random number of *empty git commits* 
 in desired number of days from now.
