@@ -18,7 +18,7 @@ def roundTime(dt=None, roundTo=60):
    return dt + timedelta(0, rounding-seconds, -dt.microsecond)
 
 
-def fake_commit(user,repo,days,month):
+def fake_commit(user,repo,days,month, min_commit, max_commit):
 
     beginning = """#!/usr/bin/env bash
                     REPO={0}
@@ -38,7 +38,7 @@ def fake_commit(user,repo,days,month):
     commitdate = datetime.today()
 
     for i in range(days):
-        rnd = random.randint(0, 5)
+        rnd = random.randint(min_commit, max_commit)
         commitdate = roundTime(
             datetime.today() - timedelta(days=i) + relativedelta(months=-month), roundTo=60*60)
         for j in range(rnd):
@@ -56,8 +56,10 @@ def main():
     repo = input('Enter repository name to fake commits: ')
     days = int(input('Enter number of days to go back in time: '))
     month = int(input('Enter number of months to go back in time:'))
+    min_commit = int(input('Enter Number of Minimum commit per day:'))
+    max_commit = int(input('Enter Number of Maximum commit per day:'))
     
-    fake_commit(username, repo, days, month)
+    fake_commit(username, repo, days, month, min_commit, max_commit)
     subprocess.call(['./commits.sh'])
 
 if __name__ == '__main__':
