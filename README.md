@@ -18,8 +18,11 @@ Run the script.
 ```
 python fake_commit.py
 ```
+```
+./commits.sh
+```
 The script needs three parameters to run correctly:
-__github user name__, __repository name__, __number of days to go back__
+__github user name__, __repository name__, __number of days to go back__,__Number of Month to Go Back__(Give 0 if you don't want to), __Minimum and maximum range of commit within days__
 
 * Make sure the repository name is the same as the empty repository you created before running the script.
 * A random number is generated in the script which is hard coded and needs to be the maximum number of commits you have,
